@@ -3,7 +3,7 @@ export type TransactionType = 'income' | 'expense'
 export type Category = string // Now dynamic - stored as string
 
 // Default categories
-export const DEFAULT_CATEGORIES = [
+export const DEFAULT_CATEGORIES: CategoryItem[] = [
   { id: 'salary', label: 'משכורת', type: 'income', color: '#00D68F', emoji: '💰' },
   { id: 'freelance', label: 'פרילנס', type: 'income', color: '#5DCAA5', emoji: '💻' },
   { id: 'investment', label: 'השקעות', type: 'income', color: '#9F7AFF', emoji: '📈' },
