@@ -13,10 +13,11 @@ import BudgetPanel from '../components/BudgetPanel'
 import GoalsPanel from '../components/GoalsPanel'
 import InsightCard from '../components/InsightCard'
 import MonthlyChart from '../components/MonthlyChart'
+import ImportPanel from '../components/ImportPanel'
 import { supabase } from '../lib/supabase'
 import './Dashboard.css'
 
-type Tab = 'overview' | 'transactions' | 'budgets' | 'goals'
+type Tab = 'overview' | 'transactions' | 'budgets' | 'goals' | 'import'
 
 export default function Dashboard({ user }: { user: User }) {
   const { transactions, loading: txLoading, add: addTx, remove: removeTxRaw } = useTransactions(user.id)
@@ -59,6 +60,7 @@ export default function Dashboard({ user }: { user: User }) {
     { id: 'transactions', label: 'עסקאות' },
     { id: 'budgets', label: 'תקציבים' },
     { id: 'goals', label: 'יעדים' },
+    { id: 'import', label: '📥 ייבוא' },
   ]
 
   return (
@@ -154,6 +156,14 @@ export default function Dashboard({ user }: { user: User }) {
             budgets={budgets}
             transactions={thisMonthTx}
             onUpsert={upsertBudget}
+          />
+        )}
+
+        {tab === 'import' && (
+          <ImportPanel
+            onImport={async (txs) => {
+              for (const tx of txs) await addTx(tx)
+            }}
           />
         )}
 
