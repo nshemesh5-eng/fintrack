@@ -1,0 +1,212 @@
+.import-upload {
+  max-width: 640px;
+}
+
+.import-subtitle {
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 24px;
+}
+
+.import-dropzone {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 24px;
+  background: var(--surface);
+}
+
+.import-dropzone:hover, .import-dropzone.drag-over {
+  border-color: var(--text);
+  background: var(--surface2);
+}
+
+.import-dropzone.loading {
+  cursor: default;
+}
+
+.import-icon { font-size: 40px; margin-bottom: 12px; }
+
+.import-drop-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.import-formats {
+  font-size: 13px;
+  color: var(--text3);
+}
+
+.import-parsing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.import-parsing p {
+  font-size: 14px;
+  color: var(--text2);
+}
+
+.import-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.import-banks p {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 10px;
+}
+
+.import-bank-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.import-bank-badge {
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.import-error {
+  background: var(--red-light);
+  color: var(--red-text);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+/* Review */
+.import-review { width: 100%; }
+
+.import-review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.import-review-header h3 { font-size: 18px; font-weight: 600; }
+
+.import-review-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.import-summary-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  background: var(--surface2);
+  border-radius: var(--radius);
+}
+
+.import-summary-bar span:last-child { margin-right: auto; }
+
+.import-back {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text2);
+  cursor: pointer;
+  margin-right: auto;
+}
+.import-back:hover { color: var(--text); }
+
+.import-table {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.import-table-header, .import-row {
+  display: grid;
+  grid-template-columns: 36px 100px 1fr 130px 100px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.import-table-header {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text2);
+  background: var(--surface2);
+  border-bottom: 0.5px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.import-row {
+  border-bottom: 0.5px solid var(--border);
+  transition: background 0.1s;
+}
+.import-row:last-child { border-bottom: none; }
+.import-row:hover { background: var(--surface2); }
+.import-row.dimmed { opacity: 0.4; }
+
+.import-date { font-size: 12px; color: var(--text2); }
+
+.import-desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.import-cat-select {
+  font-size: 12px;
+  padding: 3px 6px;
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  width: 100%;
+}
+
+.import-amount {
+  font-weight: 600;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+.import-amount.pos { color: var(--green); }
+.import-amount.neg { color: var(--red); }
+
+/* Done */
+.import-done {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.import-done-icon { font-size: 48px; margin-bottom: 16px; }
+.import-done h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.import-done p { font-size: 14px; color: var(--text2); margin-bottom: 24px; }
