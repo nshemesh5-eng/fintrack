@@ -19,7 +19,8 @@ import './Dashboard.css'
 type Tab = 'overview' | 'transactions' | 'budgets' | 'goals'
 
 export default function Dashboard({ user }: { user: User }) {
-  const { transactions, loading: txLoading, add: addTx, remove: removeTx } = useTransactions(user.id)
+  const { transactions, loading: txLoading, add: addTx, remove: removeTxRaw } = useTransactions(user.id)
+  const removeTx = async (id: string): Promise<void> => { await removeTxRaw(id) }
   const { budgets, upsert: upsertBudget } = useBudgets(user.id)
   const { goals, add: addGoal, update: updateGoal, remove: removeGoal } = useGoals(user.id)
   const [tab, setTab] = useState<Tab>('overview')
