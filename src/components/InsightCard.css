@@ -1,0 +1,27 @@
+.insight-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  border-right: 3px solid transparent;
+}
+
+.insight-amber { background: var(--amber-light); border-right-color: var(--amber); }
+.insight-blue { background: var(--blue-light); border-right-color: var(--blue); }
+.insight-green { background: var(--green-light); border-right-color: var(--green); }
+
+.insight-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+.insight-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.insight-msg {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.5;
+}
