@@ -1,0 +1,56 @@
+.budgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.budget-card { padding: 16px; transition: box-shadow 0.15s; }
+.budget-card.over { border-color: var(--red) !important; }
+
+.budget-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.budget-cat { font-size: 14px; font-weight: 600; }
+
+.budget-edit {
+  font-size: 14px;
+  opacity: 0.4;
+  transition: opacity 0.15s;
+}
+.budget-edit:hover { opacity: 1; }
+
+.budget-amounts { font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+.amount-over { color: var(--red); }
+
+.budget-bar-bg {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.budget-bar-fill.ok { background: var(--green); }
+.budget-bar-fill.warn { background: var(--amber); }
+.budget-bar-fill.over { background: var(--red); }
+
+.budget-pct { font-size: 12px; }
+
+.budget-edit-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .budgets-grid { grid-template-columns: 1fr 1fr; }
+}
