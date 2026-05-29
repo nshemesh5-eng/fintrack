@@ -12,10 +12,7 @@ export default function Auth() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError('')
-    setSuccess('')
-    setLoading(true)
-
+    setError(''); setSuccess(''); setLoading(true)
     if (mode === 'signup') {
       const { error } = await supabase.auth.signUp({ email, password })
       if (error) setError(error.message)
@@ -31,50 +28,29 @@ export default function Auth() {
     <div className="auth-wrap">
       <div className="auth-card card">
         <div className="auth-logo">
-          <span className="auth-logo-icon">₪</span>
-          <span className="auth-logo-text">FinTrack</span>
+          <span className="auth-logo-icon">☀</span>
+          <span className="auth-logo-text">
+            <span className="auth-sun">Sun</span><span className="auth-track">Track</span>
+          </span>
         </div>
-        <p className="auth-subtitle">ניהול פיננסי חכם עם ניתוח AI</p>
+        <p className="auth-subtitle">ניהול פיננסי חכם עם AI</p>
 
         <div className="auth-tabs">
-          <button
-            className={`auth-tab ${mode === 'login' ? 'active' : ''}`}
-            onClick={() => setMode('login')}
-          >כניסה</button>
-          <button
-            className={`auth-tab ${mode === 'signup' ? 'active' : ''}`}
-            onClick={() => setMode('signup')}
-          >הרשמה</button>
+          <button className={`auth-tab ${mode === 'login' ? 'active' : ''}`} onClick={() => setMode('login')}>כניסה</button>
+          <button className={`auth-tab ${mode === 'signup' ? 'active' : ''}`} onClick={() => setMode('signup')}>הרשמה</button>
         </div>
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="field">
             <label>אימייל</label>
-            <input
-              className="form-input"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              required
-            />
+            <input className="form-input" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" required />
           </div>
           <div className="field">
             <label>סיסמה</label>
-            <input
-              className="form-input"
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="לפחות 6 תווים"
-              minLength={6}
-              required
-            />
+            <input className="form-input" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="לפחות 6 תווים" minLength={6} required />
           </div>
-
           {error && <div className="auth-error">{error}</div>}
           {success && <div className="auth-success">{success}</div>}
-
           <button className="btn-primary" type="submit" disabled={loading} style={{ width: '100%' }}>
             {loading ? 'טוען...' : mode === 'login' ? 'כניסה' : 'הרשמה'}
           </button>
